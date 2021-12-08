@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
+import Select from "../components/Select";
 
 export default function Home() {
 	const [year, setYear] = useState();
@@ -49,6 +50,9 @@ export default function Home() {
 						)}
 					</ul>
 				)}
+			</div>
+			<div>
+				<Select />
 			</div>
 		</div>
 	);
