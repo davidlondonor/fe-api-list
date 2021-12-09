@@ -1,0 +1,34 @@
+import { Field, ErrorMessage } from "formik";
+import React from "react";
+import TextErrors from "./TextErrors";
+
+const RadioButtons = (props) => {
+	const { label, name, options, ...rest } = props;
+	return (
+		<div className="form-control">
+			<label>{label}</label>
+			<Field name={name} {...rest}>
+				{({ field }) => {
+					console.log(field, "field");
+					return options.map((option) => {
+						return (
+							<React.Fragment key={option.value}>
+								<input
+									type="radio"
+									id={option.value}
+									{...field}
+									value={option.value}
+									checked={field.value === option.value}
+								/>
+								<label htmlFor={option.value}>{option.label}</label>
+							</React.Fragment>
+						);
+					});
+				}}
+			</Field>
+			<ErrorMessage name={name} component={TextErrors} />
+		</div>
+	);
+};
+
+export default RadioButtons;

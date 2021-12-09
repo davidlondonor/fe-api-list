@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import Select from "../components/Select";
+import FormikContainer from "../components/FormikContainer";
 
 export default function Home() {
 	const [year, setYear] = useState();
@@ -53,6 +54,9 @@ export default function Home() {
 			</div>
 			<div>
 				<Select />
+			</div>
+			<div>
+				<FormikContainer />
 			</div>
 		</div>
 	);
